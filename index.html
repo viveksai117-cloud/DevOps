@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Sai Vivek | Cloud and DevOps Portfolio</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;700;800&family=IBM+Plex+Sans:wght@400;500&display=swap">
+<style>
+:root{
+  --bg:#EDF0F5; --surface:#FFFFFF; --ink:#16213A; --muted:#55607A; --line:#CCD3E0; --accent:#2B50E6; --accent-ink:#FFFFFF;
+  --head:"Bricolage Grotesque","Segoe UI",system-ui,sans-serif; --body:"IBM Plex Sans","Segoe UI",system-ui,sans-serif;
+  box-sizing:border-box; padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0F1524;--surface:#18203A;--ink:#E8ECF7;--muted:#9AA6C4;--line:#2B3556;--accent:#7F9BFF;--accent-ink:#0F1524}}
+:root[data-theme="dark"]{--bg:#0F1524;--surface:#18203A;--ink:#E8ECF7;--muted:#9AA6C4;--line:#2B3556;--accent:#7F9BFF;--accent-ink:#0F1524}
+*,*::before,*::after{box-sizing:inherit}
+html{scroll-behavior:smooth;scroll-padding-top:calc(env(safe-area-inset-top,0px) + 64px)}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 1rem/1.65 var(--body)}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--accent);outline-offset:3px}
+.wrap{max-width:960px;margin:0 auto;padding:0 20px}
+header{position:sticky;top:env(safe-area-inset-top,0px);background:var(--bg);border-bottom:1px solid var(--line);z-index:5}
+nav{display:flex;align-items:center;gap:18px;height:56px;overflow-x:auto}
+nav .logo{font:800 1.1rem var(--head);text-decoration:none;margin-right:auto;white-space:nowrap}
+nav a.l{text-decoration:none;color:var(--muted);font-size:.95rem;white-space:nowrap}
+nav a.l:hover{color:var(--ink)}
+button{font:inherit;cursor:pointer}
+.icon{background:none;border:1px solid var(--line);color:var(--ink);border-radius:8px;padding:6px 10px}
+.hero{padding:72px 0 56px}
+.hero h1{font:800 clamp(3rem,11vw,7.5rem)/.92 var(--head);letter-spacing:-.04em;margin:0 0 24px}
+.hero p{max-width:34em;font-size:1.15rem;color:var(--muted);margin:0 0 28px}
+.btns{display:flex;flex-wrap:wrap;gap:12px}
+.btn{display:inline-block;padding:12px 22px;border-radius:10px;text-decoration:none;font-weight:500;border:1.5px solid var(--ink)}
+.btn.main{background:var(--accent);border-color:var(--accent);color:var(--accent-ink)}
+section{padding:56px 0;border-top:1px solid var(--line)}
+h2{font:700 clamp(1.7rem,4vw,2.3rem)/1.1 var(--head);letter-spacing:-.02em;margin:0 0 24px}
+.about{display:grid;gap:32px;grid-template-columns:1.4fr 1fr}
+.skills h3{font:700 1rem var(--head);margin:0 0 6px}
+.skills p{margin:0 0 14px;color:var(--muted)}
+.filters{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:20px}
+.filters button{background:none;border:1px solid var(--line);color:var(--ink);padding:6px 16px;border-radius:99px}
+.filters button[aria-pressed="true"]{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.grid{display:grid;gap:18px;grid-template-columns:repeat(auto-fill,minmax(260px,1fr))}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:14px;overflow:hidden;display:flex;flex-direction:column}
+.card .shot{height:130px;display:grid;place-items:center;font:800 2.4rem var(--head);color:var(--accent-ink);background:var(--accent)}
+.card .body{padding:18px;display:flex;flex-direction:column;gap:8px;flex:1}
+.card h3{font:700 1.15rem var(--head);margin:0}
+.card p{margin:0;color:var(--muted);font-size:.95rem}
+.card .tech{font-size:.85rem;color:var(--muted)}
+.card .links{margin-top:auto;display:flex;gap:16px;font-weight:500;padding-top:6px}
+.card[hidden]{display:none}
+.tl{list-style:none;margin:0;padding:0 0 0 22px;border-left:2px solid var(--line)}
+.tl li{margin-bottom:26px;position:relative}
+.tl li::before{content:"";position:absolute;left:-29px;top:8px;width:12px;height:12px;border-radius:50%;background:var(--accent)}
+.tl b{font-family:var(--head);font-size:1.1rem}
+.tl span{display:block;color:var(--muted);font-size:.92rem}
+form{display:grid;gap:14px;max-width:520px}
+label{display:grid;gap:4px;font-weight:500;font-size:.95rem}
+input,textarea{font:inherit;padding:11px 12px;border-radius:10px;border:1px solid var(--line);background:var(--surface);color:var(--ink)}
+.social{display:flex;flex-wrap:wrap;gap:18px;margin-top:22px}
+footer{padding:28px 0 40px;color:var(--muted);font-size:.9rem;border-top:1px solid var(--line)}
+@media (max-width:700px){.about{grid-template-columns:1fr}.hero{padding-top:44px}}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<header><div class="wrap"><nav aria-label="Main">
+  <a class="logo" href="#top">Sai Vivek</a>
+  <a class="l" href="#about">About</a><a class="l" href="#projects">Projects</a><a class="l" href="#journey">Experience</a><a class="l" href="#contact">Contact</a>
+  <button class="icon" id="theme" aria-label="Switch light or dark theme">Theme</button>
+</nav></div></header>
+
+<main id="top">
+<div class="wrap">
+  <div class="hero">
+    <h1>Sai Vivek</h1>
+    <p>Aspiring DevOps Engineer skilled in AWS, Azure, Linux, Git, Jenkins, Docker and Kubernetes. I build CI/CD pipelines and serverless apps, and I'm looking for an entry-level DevOps or Cloud Engineer role.</p>
+    <div class="btns"><a class="btn main" href="#projects">View projects</a><a class="btn" href="#contact">Contact me</a></div>
+  </div>
+
+  <section id="about">
+    <h2>About me</h2>
+    <div class="about">
+      <div>
+        <p>I'm passionate about cloud computing and DevOps, with hands-on experience building CI/CD pipelines and serverless applications. I completed cloud and DevOps training at Excellence Technology.</p>
+        <p>With an MBA in Information Technology and an internship in business development, I understand both the technical work and the business reasons behind it. I'm seeking an entry-level DevOps or Cloud Engineer role where I can apply my skills and keep learning.</p>
+      </div>
+      <div class="skills">
+        <h3>Cloud</h3><p>AWS (EC2, Load Balancer, serverless), Azure</p>
+        <h3>DevOps</h3><p>Jenkins, Docker, Kubernetes, CI/CD</p>
+        <h3>Tools</h3><p>Linux, Git, GitHub, VS Code</p>
+        <h3>Languages</h3><p>English, Hindi</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="projects">
+    <h2>Projects</h2>
+    <div class="filters" role="group" aria-label="Filter projects">
+      <button aria-pressed="true" data-f="all">All</button><button aria-pressed="false" data-f="aws">AWS</button><button aria-pressed="false" data-f="azure">Azure</button><button aria-pressed="false" data-f="devops">DevOps</button>
+    </div>
+    <div class="grid">
+      <article class="card" data-t="aws"><div class="shot">AWS</div><div class="body"><h3>Static website hosting on AWS</h3><p>A static website hosted on EC2 instances and served through an Application Load Balancer.</p><div class="tech">AWS EC2, Application Load Balancer</div><div class="links"><a href="https://github.com/viveksai117-cloud/" target="_blank" rel="noopener">GitHub</a></div></div></article>
+      <article class="card" data-t="aws"><div class="shot">Serverless</div><div class="body"><h3>Serverless student registration system</h3><p>A student registration system built on serverless AWS services, with no servers to manage.</p><div class="tech">AWS serverless services</div><div class="links"><a href="https://github.com/viveksai117-cloud/" target="_blank" rel="noopener">GitHub</a></div></div></article>
+      <article class="card" data-t="azure devops"><div class="shot">CI/CD</div><div class="body"><h3>End-to-end DevOps CI/CD pipeline</h3><p>An automated pipeline that builds and deploys code from GitHub using Jenkins to an Azure VM.</p><div class="tech">GitHub, Jenkins, VS Code, Azure VM</div><div class="links"><a href="https://github.com/viveksai117-cloud/" target="_blank" rel="noopener">GitHub</a></div></div></article>
+    </div>
+  </section>
+
+  <section id="journey">
+    <h2>Experience and education</h2>
+    <ol class="tl">
+      <li><b>Business Development Executive (intern)</b><span>Alencure Biotech Pvt. Ltd.</span>Internship focused on business development.</li>
+      <li><b>Cloud and DevOps training</b><span>Excellence Technology</span>Completed training in AWS, Azure, Linux, Git, Jenkins, Docker and Kubernetes.</li>
+      <li><b>MBA, Information Technology</b><span>Bahra University, Shimla, Himachal Pradesh</span></li>
+      <li><b>Bachelor of Commerce</b><span>Govt. Degree College, Una, Himachal Pradesh</span></li>
+    </ol>
+  </section>
+
+  <section id="contact">
+    <h2>Contact</h2>
+    <p>Hiring for a DevOps or cloud role? Send a message, or call 7807034425. I'm based in Una, Himachal Pradesh.</p>
+    <form id="cf">
+      <label>Your name<input name="n" required autocomplete="name"></label>
+      <label>Your email<input name="e" type="email" required autocomplete="email"></label>
+      <label>Message<textarea name="m" rows="5" required></textarea></label>
+      <button class="btn main" type="submit">Send message</button>
+    </form>
+    <div class="social"><a href="mailto:Viveksai117@gmail.com">Viveksai117@gmail.com</a><a href="https://www.linkedin.com/in/sai-vivek-68bb9528b/" target="_blank" rel="noopener">LinkedIn</a><a href="https://github.com/viveksai117-cloud/" target="_blank" rel="noopener">GitHub</a></div>
+  </section>
+</div>
+</main>
+<footer><div class="wrap">Built by Sai Vivek</div></footer>
+
+<script>
+(function(){
+  var root=document.documentElement,btn=document.getElementById('theme');
+  try{var t=localStorage.getItem('theme');if(t)root.setAttribute('data-theme',t)}catch(e){}
+  btn.addEventListener('click',function(){
+    var dark=root.getAttribute('data-theme')==='dark'||(!root.getAttribute('data-theme')&&matchMedia('(prefers-color-scheme:dark)').matches);
+    var n=dark?'light':'dark';root.setAttribute('data-theme',n);
+    try{localStorage.setItem('theme',n)}catch(e){}
+  });
+  var fs=document.querySelectorAll('.filters button'),cs=document.querySelectorAll('.card');
+  fs.forEach(function(b){b.addEventListener('click',function(){
+    fs.forEach(function(x){x.setAttribute('aria-pressed',x===b)});
+    cs.forEach(function(c){c.hidden=!(b.dataset.f==='all'||c.dataset.t.split(' ').indexOf(b.dataset.f)>-1)});
+  })});
+  document.getElementById('cf').addEventListener('submit',function(ev){
+    ev.preventDefault();var f=ev.target;
+    location.href='mailto:Viveksai117@gmail.com?subject='+encodeURIComponent('Message from '+f.n.value)+'&body='+encodeURIComponent(f.m.value+'\n\n'+f.n.value+' ('+f.e.value+')');
+  });
+})();
+</script>
+</body>
+</html>
